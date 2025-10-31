@@ -19,6 +19,13 @@
       }
     ],
     "paths": {
+      "@ui/*":["./src/components/ui/*"],
+      "@nav/*":["./src/components/nav/*"],
+      "@hooks/*":["./src/hooks/*"],
+      "@actions/*":["./src/actions/*"],
+      "@lib/*":["./src/lib/*"],
+      "@components/*":["./src/components/*"],
+      "@api/*":["./src/app/api/*"],
       "@/*": ["./src/*"]
     }
   },
