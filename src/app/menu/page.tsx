@@ -23,16 +23,8 @@ export default function MenuPage() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [previewItem, setPreviewItem] = useState<MenuItem | null>(null);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  
 
   // 🛒 Add to Cart function
   const addToCart = (item: MenuItem, quantity: number) => {
@@ -83,7 +75,7 @@ export default function MenuPage() {
       </section>
 
       {/* Floating Cart Button (Mobile only) */}
-      {!isLargeScreen && (
+      
         <button
           onClick={() => setCartOpen(true)}
           className="fixed bottom-6 right-6 bg-amber-500 text-white rounded-full p-4 shadow-lg"
@@ -93,12 +85,12 @@ export default function MenuPage() {
             <span className="ml-1 text-sm font-semibold">({cart.length})</span>
           )}
         </button>
-      )}
+      
 
       {/* Sidebar Cart */}
       <CartSidebar
         cart={cart}
-        open={cartOpen || isLargeScreen}
+        open={cartOpen}
         onClose={() => setCartOpen(false)}
         onCheckout={() => alert("Proceeding to checkout...")}
       />

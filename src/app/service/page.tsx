@@ -8,6 +8,7 @@ import BookingModal from "./components/BookingModal";
 import CartSidebar from "./components/CartSidebar";
 import ServiceFilter from "./components/ServiceFilter";
 import ServiceGrid from "./components/ServiceGrid";
+import { ShoppingCart } from "lucide-react";
 
 export default function ServicesPage() {
   const [query, setQuery] = useState("");
@@ -15,14 +16,8 @@ export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<VenueService | null>(null);
   const [cart, setCart] = useState<any[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => setIsLargeScreen(window.innerWidth >= 1024);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
 
   const categories = [
     { id: "all", name: "All" },
@@ -70,17 +65,20 @@ export default function ServicesPage() {
       {/* Floating Cart for mobile */}
       <button
         onClick={() => setCartOpen(true)}
-        className="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-600 text-white text-xl rounded-full p-4 shadow-lg z-50 md:hidden"
+        className="fixed bottom-6 right-6 flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white rounded-full p-4 shadow-lg z-50 transition-all duration-300"
+        aria-label="Open cart"
       >
-        🛒
+        <ShoppingCart className="w-6 h-6" />
         {cart.length > 0 && (
-          <span className="ml-1 text-sm font-semibold">({cart.length})</span>
+          <span className="absolute -top-1 -right-1 bg-white text-amber-600 text-xs font-semibold px-1.5 py-0.5 rounded-full shadow">
+            {cart.length}
+          </span>
         )}
       </button>
 
       <CartSidebar
         cart={cart}
-        open={cartOpen || isLargeScreen}
+        open={cartOpen}
         onClose={() => setCartOpen(false)}
         onCheckout={() => alert("Proceeding to checkout...")}
       />
