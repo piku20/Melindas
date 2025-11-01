@@ -16,7 +16,7 @@ export default function ServiceCard({ service, onBook }: Props) {
     <motion.div
       whileHover={{ scale: 1.01 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-      className="relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all max-w-sm mx-auto"
+      className="relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all max-w-sm min-w-sm mx-auto"
     >
       {/* 📸 Image */}
       <div className="relative h-56 sm:h-60 md:h-64">

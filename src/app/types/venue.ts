@@ -40,7 +40,7 @@ export interface FunctionHallService extends BaseVenueService {
 
 export interface HotelRoomService extends BaseVenueService {
   type: "hotel-room";
-  roomType: "standard" | "premium" | "family";
+  roomType: "standard" | "premium" | "deluxe" | "family";
   bedConfiguration: string[];
   amenities: string[];
   duration?: never; // Hotel rooms don't have duration like function halls

@@ -145,7 +145,7 @@ export const venueServices: VenueServices = [
       { name: "Pool access" }
     ],
     restrictions: [],
-    images: ["standard_hotel_room.png"],
+    images: ["hotel_room_standard.png"],
     category: "accommodation"
   },
   {
@@ -171,7 +171,33 @@ export const venueServices: VenueServices = [
       { name: "Pool access" }
     ],
     restrictions: [],
-    images: ["premium_hotel_room.png"],
+    images: ["hotel_room_premium.png"],
+    category: "accommodation"
+  },
+  {
+    id: "hotel-deluxe",
+    type: "hotel-room",
+    name: "Deluxe Hotel Room",
+    description: "Spacious family room with multiple beds, perfect for groups",
+    pricing: {
+      amount: 2000.00,
+      currency: "PHP",
+      period: "per night"
+    },
+    capacity: {
+      min: 2,
+      max: 2,
+      unit: "pax"
+    },
+    roomType: "deluxe",
+    bedConfiguration: ["Twin Single Beds"],
+    amenities: ["Breakfast included", "Pool access"],
+    inclusions: [
+      { name: "Breakfast" },
+      { name: "Pool access" }
+    ],
+    restrictions: [],
+    images: ["hotel_room_deluxe.png"],
     category: "accommodation"
   },
   {
@@ -197,7 +223,7 @@ export const venueServices: VenueServices = [
       { name: "Pool access" }
     ],
     restrictions: [],
-    images: ["family_hotel_room.png"],
+    images: ["hotel_room_family.png"],
     category: "accommodation"
   },
 

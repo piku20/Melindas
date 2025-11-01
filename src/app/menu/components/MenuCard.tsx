@@ -24,10 +24,11 @@ const MenuCard: FC<MenuCardProps> = ({ item, currency, addToCart, setPreviewItem
     >
       <div className="relative w-full h-40 sm:h-44 md:h-36 lg:h-40">
         <Image
-          src={item.thumbnail ?? "/menu/placeholder.jpg"}
+          src={item.thumbnail ?? "/menu/food_placeholder.png"}
           alt={item.name}
           fill
           className="object-cover"
+           
         />
       </div>
 
