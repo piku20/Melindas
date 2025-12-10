@@ -67,7 +67,7 @@ const ItemPreviewModal: FC<ItemPreviewModalProps> = ({
             priority
           />
           {/* 🔹 Gradient Overlay for text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
           {/* 🔹 Floating Title */}
           <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
             <h2 className="text-2xl sm:text-3xl font-semibold">
